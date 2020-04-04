@@ -12,6 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
@@ -34,37 +35,19 @@ public class TestBase {
     protected static ExtentTest extentLogger;
     public  static  Logger logger = LogManager.getLogger();
 
+    @BeforeTest(alwaysRun = true)
     @Parameters({"browser"})
-    public  WebDriver getDriver(String browser) throws IOException {
-
-        Properties prop = new Properties();
-        String path ="/Users/mubarekuyghurturk/IdeaProjects/Kayak/configuration.properties";
-        FileInputStream fis = new FileInputStream (path);
-        prop.load(fis);
-        String browserName = prop.getProperty("browser");
-
-
-
-
-        if (browserName.equalsIgnoreCase("chrome")) {
-            System.setProperty("webdriver.chrome.driver", "/Users/mubarekuyghurturk/Downloads/chromedriver");
-            driver = new ChromeDriver();
-        } else if (browser.equalsIgnoreCase("firefox")) {
-            System.setProperty("webdriver.gecko.driver", "/Users/mubarekuyghurturk/Downloads/geckodriver");
-            driver = new FirefoxDriver();
-        }
-
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        return driver;
-
+    public void setup(@Optional String browser) {
+        driver = Driver.getDriver(browser);
+        pages = new Pages();
+        softAssert = new SoftAssert();
+        driver.manage().timeouts().implicitlyWait(Long.valueOf(Configuration_Reader.getProperty("implicitwait")), TimeUnit.SECONDS);
+        driver.manage().window().maximize();
+        String URL = Configuration_Reader.getProperty("url");
+        driver.get(URL);
     }
 
-    @BeforeTest
-    public void setUp(){
-        Driver.getDriver().get(Configuration_Reader.getProperty("url"));
-        Driver.getDriver().manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
 
-    }
 
 
     @Parameters("test")

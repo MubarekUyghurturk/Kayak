@@ -1,5 +1,7 @@
 package com.kayak.Utils;
 
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
 import java.io.FileInputStream;
 import java.util.Properties;
 
@@ -12,7 +14,7 @@ public class Configuration_Reader {
             try {
                 //path to our .properties file
                 //MIGHT BE WRONG PATH HERE, PAY ATTENTION
-                String path = "/Users/mubarekuyghurturk/IdeaProjects/Kayak/configuration.properties";
+                String path = "configuration.properties";
                 //we create object of input stream to access file
                 System.out.println(path);
                 //provides access to file
@@ -27,6 +29,7 @@ public class Configuration_Reader {
                 e.printStackTrace();
             }
         }
+
 
         public static String getProperty(String key){
             return configFile.getProperty(key);

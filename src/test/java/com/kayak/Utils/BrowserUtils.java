@@ -90,7 +90,7 @@ public class BrowserUtils {
 
     public static WebElement waitForVisibility(WebElement element, int timeToWaitInSec) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeToWaitInSec);
-        return wait.until(ExpectedConditions.visibilityOf(element));
+        return wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
 

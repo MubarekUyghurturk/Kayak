@@ -1,5 +1,7 @@
 package com.kayak.tests;
 
+
+
 import com.kayak.Utils.BrowserUtils;
 import com.kayak.Utils.Configuration_Reader;
 import com.kayak.Utils.Driver;
@@ -9,6 +11,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
 import org.testng.Assert;
@@ -18,6 +22,7 @@ import org.testng.annotations.Test;
 
 import java.io.IOException;
 
+import java.util.Iterator;
 
 
 
@@ -30,74 +35,93 @@ public class LandingTests extends TestBase {
     @Test(priority = 1)
     public void bookedFlight() throws IOException, InterruptedException {
 
-        extentLogger = report.createTest("Booked Flight ");
-
-        Driver.getDriver().get(Configuration_Reader.getProperty("url"));
-
-
         LandingPage landing = new LandingPage();
-
-        BrowserUtils.waitForVisibility((WebElement) driver, 10);
-
+        BrowserUtils.waitPlease(2);
         landing.deletButtonElement.click();
-    }
 
-
-    @Test(priority = 2)
-    public void enterDep_desCity() {
 
         String originCity = Configuration_Reader.getProperty("origin1");
         String destinationCity = Configuration_Reader.getProperty("destination1");
 
-        BrowserUtils.waitPlease(1000);
-        LandingPage landingPage = new LandingPage();
-        landingPage.bookFlight(originCity, destinationCity);
-
-    }
+        BrowserUtils.waitPlease(2);
 
 
-    @Test(priority = 3)
-    public void selectDate() {
+
+        landing.originCityElement.sendKeys(originCity);
+        BrowserUtils.waitPlease(3);
+        landing.originCityElement.sendKeys(Keys.RETURN);
+        landing.destInitilizeElement.click();
+        BrowserUtils.waitPlease(2);
+        landing.destinationCityElement.sendKeys(destinationCity);
+        BrowserUtils.waitPlease(3);
+        landing.destinationCityElement.sendKeys(Keys.RETURN);
 
         String departDay = Configuration_Reader.getProperty("departDay");
         String returnDay = Configuration_Reader.getProperty("returnDay");
-        BrowserUtils.waitPlease(1000);
 
-        LandingPage landingPage = new LandingPage();
-        landingPage.choseDate(departDay, returnDay);
-        landingPage.searchButtonElement.click();
+        landing.dateInitilize.click();
+        landing.departureDayElement.sendKeys(departDay);
+        landing.returnDayElement.sendKeys(returnDay);
+        landing.searchButtonElement.click();
+        BrowserUtils.waitPlease(3);
 
+        /*
 
-    }
-
-
-
-
-    @Test(priority = 4)
-    public void resultConferm() {
-
-
-        LandingPage landingPage = new LandingPage();
         for (String window : driver.getWindowHandles()) {
 
             driver.switchTo().window(window);
-            BrowserUtils.waitPlease(1000);
-            landingPage.clsPopUp.click();
+            if (landing.clsPopUp.isEnabled()){
+                landing.clsPopUp.click();
+            }
 
+            else if (landing.clsPopUp1.isEnabled()){
+                landing.clsPopUp1.click();
+            }
+        }
+         */
+
+
+        try{
+
+            for (String window : driver.getWindowHandles()) {
+
+                driver.switchTo().window(window);
+                if (landing.clsPopUp.isEnabled()){
+                    landing.clsPopUp.click();
+                }
+
+                else if (landing.clsPopUp1.isEnabled()){
+                    landing.clsPopUp1.click();
+                }
+
+            }
+
+        }catch(Exception e){
+            e.printStackTrace();
         }
 
 
-        String city = landingPage.results.getText();
-        Assert.assertTrue(city.contains("origin1"));
-        log.info("departure mathed to the search");
-        Assert.assertTrue(city.contains("destination1"));
-        log.info("arrival mathed to the search");
 
+
+
+
+        int N = Integer.parseInt(Configuration_Reader.getProperty("N"));
+
+        Iterator<WebElement> itr = landing.results.iterator();
+        int i = 0;
+        while(itr.hasNext() & i < N) {
+        String city = itr.next().getAttribute("textContent");
+        Assert.assertTrue(city.toLowerCase().contains(originCity.toLowerCase()));
+        log.info("departure matched to the search");
+        Assert.assertTrue(city.toLowerCase().contains(destinationCity.toLowerCase()));
+        log.info("arrival matched to the search");
+        i++;
+        }
     }
 
 
 
-    @DataProvider(name ="data_info")
+    /*@DataProvider(name ="data_info")
     public static Object[][] datas(){
         return new Object[][]{
                 {"oakland","los angeles"},
@@ -108,13 +132,13 @@ public class LandingTests extends TestBase {
     }
 
 
-    @Test (dataProvider = "data_info")
+     @Test (dataProvider = "data_info")
     public void bookedWithDataProvider(String originCity, String destinationCity, String departDay, String returnDay){
         extentLogger = report.createTest("DDT test" + originCity);
 
 
 
-    }
+    }*/
 
 
 
