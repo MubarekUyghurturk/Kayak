@@ -1,0 +1,46 @@
+2020-04-04 00:17:39 [main] INFO  TestBase:66 - Report path: /Users/mubarekuyghurturk/IdeaProjects/Kayak/test-output/reports/04_04_2020/report.html
+2020-04-04 00:18:03 [main] INFO  LandingTests:113 - departure matched to the search
+2020-04-04 00:18:03 [main] INFO  LandingTests:115 - arrival matched to the search
+2020-04-04 00:18:05 [main] INFO  LandingTests:113 - departure matched to the search
+2020-04-04 00:18:05 [main] INFO  LandingTests:115 - arrival matched to the search
+2020-04-04 00:18:05 [main] INFO  LandingTests:113 - departure matched to the search
+2020-04-04 00:18:05 [main] INFO  LandingTests:115 - arrival matched to the search
+2020-04-04 00:18:05 [main] INFO  LandingTests:113 - departure matched to the search
+2020-04-04 00:18:05 [main] INFO  LandingTests:115 - arrival matched to the search
+2020-04-04 00:18:05 [main] INFO  LandingTests:113 - departure matched to the search
+2020-04-04 00:18:05 [main] INFO  LandingTests:115 - arrival matched to the search
+2020-04-04 00:32:21 [main] INFO  TestBase:66 - Report path: /Users/mubarekuyghurturk/IdeaProjects/Kayak/test-output/reports/04_04_2020/report.html
+2020-04-04 00:32:30 [main] INFO  LandingTests:41 - default airport deleted
+2020-04-04 00:32:35 [main] INFO  LandingTests:54 - origin city entered
+2020-04-04 00:32:41 [main] INFO  LandingTests:60 - destination entered
+2020-04-04 00:32:42 [main] INFO  LandingTests:67 - departure date selected
+2020-04-04 00:32:42 [main] INFO  LandingTests:69 - return date selected
+2020-04-04 00:32:42 [main] INFO  LandingTests:71 - Successfully submitted!
+2020-04-04 00:32:46 [main] INFO  LandingTests:119 - departure matched to the search
+2020-04-04 00:32:46 [main] INFO  LandingTests:121 - arrival matched to the search
+2020-04-04 00:32:46 [main] INFO  LandingTests:119 - departure matched to the search
+2020-04-04 00:32:46 [main] INFO  LandingTests:121 - arrival matched to the search
+2020-04-04 00:32:46 [main] INFO  LandingTests:119 - departure matched to the search
+2020-04-04 00:32:46 [main] INFO  LandingTests:121 - arrival matched to the search
+2020-04-04 00:32:46 [main] INFO  LandingTests:119 - departure matched to the search
+2020-04-04 00:32:46 [main] INFO  LandingTests:121 - arrival matched to the search
+2020-04-04 00:32:46 [main] INFO  LandingTests:119 - departure matched to the search
+2020-04-04 00:32:46 [main] INFO  LandingTests:121 - arrival matched to the search
+2020-04-04 00:36:14 [main] INFO  TestBase:66 - Report path: /Users/mubarekuyghurturk/IdeaProjects/Kayak/test-output/reports/04_04_2020/report.html
+2020-04-04 00:36:24 [main] INFO  LandingTests:41 - default airport deleted
+2020-04-04 00:36:29 [main] INFO  LandingTests:54 - origin city entered
+2020-04-04 00:36:35 [main] INFO  LandingTests:60 - destination entered
+2020-04-04 00:36:37 [main] INFO  LandingTests:67 - departure date selected
+2020-04-04 00:36:37 [main] INFO  LandingTests:69 - return date selected
+2020-04-04 00:36:37 [main] INFO  LandingTests:71 - Successfully submitted!
+2020-04-04 00:36:41 [main] INFO  LandingTests:113 - will check5results
+2020-04-04 00:36:42 [main] INFO  LandingTests:119 - Result:0 --departure matched to the search
+2020-04-04 00:36:42 [main] INFO  LandingTests:121 - Result:0 --arrival matched to the search
+2020-04-04 00:36:44 [main] INFO  LandingTests:119 - Result:1 --departure matched to the search
+2020-04-04 00:36:44 [main] INFO  LandingTests:121 - Result:1 --arrival matched to the search
+2020-04-04 00:36:44 [main] INFO  LandingTests:119 - Result:2 --departure matched to the search
+2020-04-04 00:36:44 [main] INFO  LandingTests:121 - Result:2 --arrival matched to the search
+2020-04-04 00:36:44 [main] INFO  LandingTests:119 - Result:3 --departure matched to the search
+2020-04-04 00:36:44 [main] INFO  LandingTests:121 - Result:3 --arrival matched to the search
+2020-04-04 00:36:44 [main] INFO  LandingTests:119 - Result:4 --departure matched to the search
+2020-04-04 00:36:44 [main] INFO  LandingTests:121 - Result:4 --arrival matched to the search

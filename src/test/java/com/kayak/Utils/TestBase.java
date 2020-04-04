@@ -12,10 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -35,6 +32,8 @@ public class TestBase {
     protected static ExtentTest extentLogger;
     public  static  Logger logger = LogManager.getLogger();
 
+
+
     @BeforeTest(alwaysRun = true)
     @Parameters({"browser"})
     public void setup(@Optional String browser) {
@@ -50,6 +49,7 @@ public class TestBase {
 
 
 
+   @BeforeTest(alwaysRun = true)
     @Parameters("test")
     public void setUpTest(@Optional String test) {
         // actual reporter

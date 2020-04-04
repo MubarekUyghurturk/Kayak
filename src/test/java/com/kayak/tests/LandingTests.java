@@ -38,6 +38,7 @@ public class LandingTests extends TestBase {
         LandingPage landing = new LandingPage();
         BrowserUtils.waitPlease(2);
         landing.deletButtonElement.click();
+        log.info("default airport deleted");
 
 
         String originCity = Configuration_Reader.getProperty("origin1");
@@ -50,19 +51,24 @@ public class LandingTests extends TestBase {
         landing.originCityElement.sendKeys(originCity);
         BrowserUtils.waitPlease(3);
         landing.originCityElement.sendKeys(Keys.RETURN);
+        log.info("origin city entered");
         landing.destInitilizeElement.click();
         BrowserUtils.waitPlease(2);
         landing.destinationCityElement.sendKeys(destinationCity);
         BrowserUtils.waitPlease(3);
         landing.destinationCityElement.sendKeys(Keys.RETURN);
+        log.info("destination entered");
 
         String departDay = Configuration_Reader.getProperty("departDay");
         String returnDay = Configuration_Reader.getProperty("returnDay");
 
         landing.dateInitilize.click();
         landing.departureDayElement.sendKeys(departDay);
+        log.info("departure date selected");
         landing.returnDayElement.sendKeys(returnDay);
+        log.info("return date selected");
         landing.searchButtonElement.click();
+        log.info("Successfully submitted!");
         BrowserUtils.waitPlease(3);
 
         /*
@@ -81,24 +87,22 @@ public class LandingTests extends TestBase {
          */
 
 
-        try{
+
 
             for (String window : driver.getWindowHandles()) {
 
                 driver.switchTo().window(window);
-                if (landing.clsPopUp.isEnabled()){
-                    landing.clsPopUp.click();
-                }
 
-                else if (landing.clsPopUp1.isEnabled()){
+                try {
+
+                    landing.clsPopUp.click();
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+
                     landing.clsPopUp1.click();
                 }
-
             }
-
-        }catch(Exception e){
-            e.printStackTrace();
-        }
 
 
 
@@ -106,15 +110,15 @@ public class LandingTests extends TestBase {
 
 
         int N = Integer.parseInt(Configuration_Reader.getProperty("N"));
-
+        log.info("will check"+N+"results");
         Iterator<WebElement> itr = landing.results.iterator();
         int i = 0;
         while(itr.hasNext() & i < N) {
         String city = itr.next().getAttribute("textContent");
         Assert.assertTrue(city.toLowerCase().contains(originCity.toLowerCase()));
-        log.info("departure matched to the search");
+        log.info("Result:"+i+" --departure matched to the search");
         Assert.assertTrue(city.toLowerCase().contains(destinationCity.toLowerCase()));
-        log.info("arrival matched to the search");
+        log.info("Result:"+i+" --arrival matched to the search");
         i++;
         }
     }
