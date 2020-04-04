@@ -22,22 +22,6 @@ public class Driver {
     private Driver() {
     }
 
-    //@Parameters({"browser"})
-    /*public static WebDriver getDriver(String browser) {
-
-
-        if (browser.equalsIgnoreCase("chrome")) {
-            System.setProperty("webdriver.chrome.driver", "/Users/mubarekuyghurturk/Downloads/chromedriver");
-            driver = new ChromeDriver();
-        } else if (browser.equalsIgnoreCase("firefox")) {
-            System.setProperty("webdriver.gecko.driver", "/Users/mubarekuyghurturk/Downloads/geckodriver");
-            driver = new FirefoxDriver();
-        }
-
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        return driver;
-
-    }*/
 
     public synchronized static WebDriver getDriver(String browser) {
         // String browser ==>  it originally comes from xml file to test base class, from test base it comes here

@@ -30,26 +30,9 @@ public class TestBase {
     protected static ExtentReports report;
     protected static ExtentHtmlReporter htmlReporter;
     protected static ExtentTest extentLogger;
-    public  static  Logger logger = LogManager.getLogger();
+    private static final Logger logger = LogManager.getLogger();
 
-
-
-    @BeforeTest(alwaysRun = true)
-    @Parameters({"browser"})
-    public void setup(@Optional String browser) {
-        driver = Driver.getDriver(browser);
-        pages = new Pages();
-        softAssert = new SoftAssert();
-        driver.manage().timeouts().implicitlyWait(Long.valueOf(Configuration_Reader.getProperty("implicitwait")), TimeUnit.SECONDS);
-        driver.manage().window().maximize();
-        String URL = Configuration_Reader.getProperty("url");
-        driver.get(URL);
-    }
-
-
-
-
-   @BeforeTest(alwaysRun = true)
+    @BeforeSuite(alwaysRun = true)
     @Parameters("test")
     public void setUpTest(@Optional String test) {
         // actual reporter
@@ -65,26 +48,37 @@ public class TestBase {
         htmlReporter = new ExtentHtmlReporter(filePath);
         logger.info("Report path: "+filePath);
         report.attachReporter(htmlReporter);
-        report.setSystemInfo("ENV", "qa");
-        report.setSystemInfo("ENV", "qa");
+        report.setSystemInfo("ENV", "kayak");
         report.setSystemInfo("browser", Configuration_Reader.getProperty("browser"));
         report.setSystemInfo("OS", System.getProperty("os.name"));
-        htmlReporter.config().setDocumentTitle("VYTrack Test automation");
-        htmlReporter.config().setReportName("VYTrack Test automation");
+        htmlReporter.config().setDocumentTitle("kayak Test automation");
+        htmlReporter.config().setReportName("kayak Test automation");
         if (System.getenv("runner") != null) {
             extentLogger.info("Running: " + System.getenv("runner"));
         }
+    }
+    @BeforeMethod(alwaysRun = true)
+    @Parameters({"browser"})
+    public void setup(@Optional String browser) {
+        driver = Driver.getDriver(browser);
+        pages = new Pages();
+        softAssert = new SoftAssert();
+        driver.manage().timeouts().implicitlyWait(Long.valueOf(Configuration_Reader.getProperty("implicitwait")), TimeUnit.SECONDS);
+        driver.manage().window().maximize();
+        String URL = Configuration_Reader.getProperty("url");
+        driver.get(URL);
     }
 
 
 
 
+
+    @AfterMethod
     @Parameters("browser")
     public void teardown(@Optional String browser, ITestResult result) {
         // checking if the test method failed
         if (result.getStatus() == ITestResult.FAILURE) {
             // get screenshot using the utility method and save the location of the screenshot
-
             String screenshotLocation = BrowserUtils.getScreenshot(result.getName());
 
             // capture the name of test method
@@ -105,20 +99,10 @@ public class TestBase {
             extentLogger.skip("Test Case Skipped is " + result.getName());
         }
         if(browser == null){
-            browser =Configuration_Reader.getProperty("browser");
+            browser = Configuration_Reader.getProperty("browser");
         }
         extentLogger.log(Status.INFO, MarkupHelper.createLabel("Browser: "+browser, ExtentColor.ORANGE));
         softAssert.assertAll();
         Driver.closeDriver();
-    }
-
-
-
-
-    public  static void closeDriver() {
-        if (driver != null) {
-            driver.quit();
-            driver = null;
-        }
     }
 }

@@ -2,24 +2,14 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="All Test Suite">
-    <test name="LandingTests with parameters">
-        <parameter name="originCity" value="oakland"></parameter>
-        <parameter name="destinationCity" value="los angeles"></parameter>
-        <parameter name="departDay" value="May 5"></parameter>
-        <parameter name="returnDay" value="May 25"></parameter>
-
+    <test name="">
         <classes>
             <class name="com.kayak.tests.LandingTests">
                 <methods>
                     <include name="bookedFlight"/>
+                    <include name="bookedWithDataProvider"/>
                 </methods>
             </class>
         </classes>
     </test>
 </suite>
-
-
-
-
-
-

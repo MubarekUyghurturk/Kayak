@@ -1,46 +1,64 @@
-2020-04-04 00:17:39 [main] INFO  TestBase:66 - Report path: /Users/mubarekuyghurturk/IdeaProjects/Kayak/test-output/reports/04_04_2020/report.html
-2020-04-04 00:18:03 [main] INFO  LandingTests:113 - departure matched to the search
-2020-04-04 00:18:03 [main] INFO  LandingTests:115 - arrival matched to the search
-2020-04-04 00:18:05 [main] INFO  LandingTests:113 - departure matched to the search
-2020-04-04 00:18:05 [main] INFO  LandingTests:115 - arrival matched to the search
-2020-04-04 00:18:05 [main] INFO  LandingTests:113 - departure matched to the search
-2020-04-04 00:18:05 [main] INFO  LandingTests:115 - arrival matched to the search
-2020-04-04 00:18:05 [main] INFO  LandingTests:113 - departure matched to the search
-2020-04-04 00:18:05 [main] INFO  LandingTests:115 - arrival matched to the search
-2020-04-04 00:18:05 [main] INFO  LandingTests:113 - departure matched to the search
-2020-04-04 00:18:05 [main] INFO  LandingTests:115 - arrival matched to the search
-2020-04-04 00:32:21 [main] INFO  TestBase:66 - Report path: /Users/mubarekuyghurturk/IdeaProjects/Kayak/test-output/reports/04_04_2020/report.html
-2020-04-04 00:32:30 [main] INFO  LandingTests:41 - default airport deleted
-2020-04-04 00:32:35 [main] INFO  LandingTests:54 - origin city entered
-2020-04-04 00:32:41 [main] INFO  LandingTests:60 - destination entered
-2020-04-04 00:32:42 [main] INFO  LandingTests:67 - departure date selected
-2020-04-04 00:32:42 [main] INFO  LandingTests:69 - return date selected
-2020-04-04 00:32:42 [main] INFO  LandingTests:71 - Successfully submitted!
-2020-04-04 00:32:46 [main] INFO  LandingTests:119 - departure matched to the search
-2020-04-04 00:32:46 [main] INFO  LandingTests:121 - arrival matched to the search
-2020-04-04 00:32:46 [main] INFO  LandingTests:119 - departure matched to the search
-2020-04-04 00:32:46 [main] INFO  LandingTests:121 - arrival matched to the search
-2020-04-04 00:32:46 [main] INFO  LandingTests:119 - departure matched to the search
-2020-04-04 00:32:46 [main] INFO  LandingTests:121 - arrival matched to the search
-2020-04-04 00:32:46 [main] INFO  LandingTests:119 - departure matched to the search
-2020-04-04 00:32:46 [main] INFO  LandingTests:121 - arrival matched to the search
-2020-04-04 00:32:46 [main] INFO  LandingTests:119 - departure matched to the search
-2020-04-04 00:32:46 [main] INFO  LandingTests:121 - arrival matched to the search
-2020-04-04 00:36:14 [main] INFO  TestBase:66 - Report path: /Users/mubarekuyghurturk/IdeaProjects/Kayak/test-output/reports/04_04_2020/report.html
-2020-04-04 00:36:24 [main] INFO  LandingTests:41 - default airport deleted
-2020-04-04 00:36:29 [main] INFO  LandingTests:54 - origin city entered
-2020-04-04 00:36:35 [main] INFO  LandingTests:60 - destination entered
-2020-04-04 00:36:37 [main] INFO  LandingTests:67 - departure date selected
-2020-04-04 00:36:37 [main] INFO  LandingTests:69 - return date selected
-2020-04-04 00:36:37 [main] INFO  LandingTests:71 - Successfully submitted!
-2020-04-04 00:36:41 [main] INFO  LandingTests:113 - will check5results
-2020-04-04 00:36:42 [main] INFO  LandingTests:119 - Result:0 --departure matched to the search
-2020-04-04 00:36:42 [main] INFO  LandingTests:121 - Result:0 --arrival matched to the search
-2020-04-04 00:36:44 [main] INFO  LandingTests:119 - Result:1 --departure matched to the search
-2020-04-04 00:36:44 [main] INFO  LandingTests:121 - Result:1 --arrival matched to the search
-2020-04-04 00:36:44 [main] INFO  LandingTests:119 - Result:2 --departure matched to the search
-2020-04-04 00:36:44 [main] INFO  LandingTests:121 - Result:2 --arrival matched to the search
-2020-04-04 00:36:44 [main] INFO  LandingTests:119 - Result:3 --departure matched to the search
-2020-04-04 00:36:44 [main] INFO  LandingTests:121 - Result:3 --arrival matched to the search
-2020-04-04 00:36:44 [main] INFO  LandingTests:119 - Result:4 --departure matched to the search
-2020-04-04 00:36:44 [main] INFO  LandingTests:121 - Result:4 --arrival matched to the search
+2020-04-04 14:35:22 [main] INFO  TestBase:49 - Report path: /Users/mubarekuyghurturk/IdeaProjects/Kayak/test-output/reports/04_04_2020/report.html
+
+
+
+2020-04-04 14:35:22 [main] INFO  TestBase:49 - Report path: /Users/mubarekuyghurturk/IdeaProjects/Kayak/test-output/reports/04_04_2020/report.html
+configuration.properties
+
+
+log4j:WARN No appenders could be found for logger (io.github.bonigarcia.wdm.Preferences).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+Starting ChromeDriver 80.0.3987.106 (f68069574609230cf9b635cd784cfb1bf81bb53a-refs/branch-heads/3987@{#882}) on port 45841
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+Apr 04, 2020 2:35:24 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+[1586036126.319][SEVERE]: Timed out receiving message from renderer: 0.100
+
+
+
+
+
+
+Starting ChromeDriver 80.0.3987.106 (f68069574609230cf9b635cd784cfb1bf81bb53a-refs/branch-heads/3987@{#882}) on port 21624
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+Apr 04, 2020 2:35:50 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+[1586036150.884][SEVERE]: Timed out receiving message from renderer: 0.100
+
+
+
+
+
+
+Starting ChromeDriver 80.0.3987.106 (f68069574609230cf9b635cd784cfb1bf81bb53a-refs/branch-heads/3987@{#882}) on port 48213
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+Apr 04, 2020 2:36:14 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+
+
+
+
+
+
+Starting ChromeDriver 80.0.3987.106 (f68069574609230cf9b635cd784cfb1bf81bb53a-refs/branch-heads/3987@{#882}) on port 2788
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+Apr 04, 2020 2:36:37 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+[1586036198.800][SEVERE]: Timed out receiving message from renderer: 0.100
+[1586036198.904][SEVERE]: Timed out receiving message from renderer: 0.100
+
+
+
+
+
+
+===============================================
+Default Suite
+Total tests run: 4, Failures: 0, Skips: 0
+===============================================
+

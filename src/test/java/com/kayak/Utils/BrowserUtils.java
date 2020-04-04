@@ -31,19 +31,6 @@ public class BrowserUtils {
     }
 
 
-
-    public static void switchToWindow(String targetTitle) {
-        String origin = Driver.getDriver().getWindowHandle();
-        for (String handle : Driver.getDriver().getWindowHandles()) {
-            Driver.getDriver().switchTo().window(handle);
-            if (Driver.getDriver().getTitle().equals(targetTitle)) {
-                return;
-            }
-        }
-        Driver.getDriver().switchTo().window(origin);
-    }
-
-
     public static String getScreenshot(String name) {
         // name the screenshot with the current date time to avoid duplicate name
         String date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd_hh:mm:ss a"));
@@ -64,29 +51,6 @@ public class BrowserUtils {
         }
         return target;
     }
-
-
-
-    public static void waitForStaleElement(WebElement element) {
-        int y = 0;
-        while (y <= 15) {
-            try {
-                element.isDisplayed();
-                break;
-            } catch (StaleElementReferenceException st) {
-                y++;
-                try {
-                    Thread.sleep(200);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-            break;
-        }
-    }
-
-
-
 
     public static WebElement waitForVisibility(WebElement element, int timeToWaitInSec) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeToWaitInSec);

@@ -15,6 +15,7 @@ import org.testng.annotations.Parameters;
 
 import java.util.List;
 
+
 public class LandingPage extends TestBase {
 
 
@@ -65,12 +66,12 @@ public class LandingPage extends TestBase {
         public WebElement clsPopUp1;
 
 
-
-
-
-
         @FindBy(xpath="//nav[@class='aria-controls']/p")
         public List<WebElement> results;
 
+        }
 
-    }
+
+
+
+
